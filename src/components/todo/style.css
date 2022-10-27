@@ -1,17 +1,40 @@
-.todo-title{
-    font-weight: bold;
-  }
-  
-  .todo-content{
-    
-  }
-  
-  .deleteButton{
-      border: 1px solid red;
-    margin-right: 3px;
-  }
-  
-  .doneButton{
-      border: 1px solid green;
-    margin-left: 3px;
-  }
+
+.todo {
+  margin: 10px;
+  width: 200px;
+  height: 100px;
+  padding: 20px;
+	border: 1px solid green;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+}
+
+.todo-title {
+  font-weight: bold;
+}
+
+.todo-context{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.deleteButton {
+  width: 50px;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  background-color: red;
+  margin-right: 3px;
+  color: white;
+}
+
+.doneButton {
+  width: 50px;
+  height: 25px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 3px;
+  background-color: green;
+  color: white;
+}

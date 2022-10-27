@@ -17,7 +17,6 @@ function Button(props) {
     } else {
         return <button className="doneButton"
             onClick={() => {
-                setTodos([...props.todos, { id: props.todo.id, title: props.todo.title, context: props.todo.context, isDone: false }]);
                 props.setTodos(
                     props.todos.map((todo => {
                         if (todo.id === props.todo.id) {

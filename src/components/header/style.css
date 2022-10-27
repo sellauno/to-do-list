@@ -1,0 +1,14 @@
+.header{
+    width: 100%;
+  display: flex;
+}
+
+.title1{
+    align-items: left;
+    font-weight: bold;
+}
+
+.title2{
+    text-align: end;
+    font-weight: bold;
+}

@@ -34,16 +34,6 @@
   justify-content: center;
 }
 
-.todo {
-  margin: 10px;
-  width: 200px;
-  height: 100px;
-  padding: 20px;
-	border: 1px solid green;
-  /* display: flex; */
-  align-items: center;
-  justify-content: center;
-}
 
 .todos-container{
   width: 1000px;
@@ -53,19 +43,6 @@
   font-weight: bold;
 }
 
-.todo-content{
-  
-}
-
-.deleteButton{
-	border: 1px solid red;
-  margin-right: 3px;
-}
-
-.doneButton{
-	border: 1px solid green;
-  margin-left: 3px;
-}
 
 .header{
   display: flex;
