@@ -1,0 +1,17 @@
+.todo-title{
+    font-weight: bold;
+  }
+  
+  .todo-content{
+    
+  }
+  
+  .deleteButton{
+      border: 1px solid red;
+    margin-right: 3px;
+  }
+  
+  .doneButton{
+      border: 1px solid green;
+    margin-left: 3px;
+  }

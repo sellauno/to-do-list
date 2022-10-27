@@ -1,24 +1,23 @@
 import { useState } from "react";
 import './App.css';
+import Header from "./components/header/Header";
+import Todo from "./components/todo/Todo";
 
 function App() {
   const [title, setTitle] = useState("");
   const [context, setContext] = useState("");
-  const [done, setDone] = useState(false);
+  const [isDone, setIsDone] = useState(false);
   const [todos, setTodos] = useState([
     {
       id: 1,
       title: "Study React",
       context: "Let's study React!",
-      done: false
+      isDone: false
     },
   ]);
   return (
     <div className="container">
-      <div className="header">
-        <div>My Todo List</div>
-        <div>React</div>
-      </div>
+      <Header></Header>
       <input
         type="text"
         value={title}
@@ -35,7 +34,7 @@ function App() {
       />
       <button
         onClick={() => {
-          setTodos([...todos, { id: todos.length + 1, title: title, context: context, done: done }]);
+          setTodos([...todos, { id: todos.length + 1, title: title, context: context, isDone: isDone }]);
         }}
       >
         To Do
@@ -43,24 +42,20 @@ function App() {
 
       <h1>Todo List</h1>
       <div className="todos-container">
-        {todos.map((todo) => (
-          <div className="todo" key={todo.id}>
-            <div className="todo-title" >
-              {todo.title}
-            </div>
-            <div className="todo-context">
-              {todo.context}
-            </div>
-            <button className="deleteButton">Delete</button>
-            <button className="doneButton"
-              onClick={() => {
-                setDone(true)
-                setTodos([...todos, { id: todo.id, title: todo.title, context: todo.context, done: done }]);
-                // setTodos([...todos, { id: todos.id, done: done }]);
-              }}
-            >Done</button>
-          </div>
-        ))}
+        <div className="working-list">
+          <h2>Working</h2>
+          {todos.filter(todo => todo.isDone === false).map((todo) => (
+            <><Todo todos={todos} todo={todo} key={todo.id} setIsDone={setIsDone} setTodos={setTodos}></Todo>
+            </>
+          ))}
+        </div>
+        <div className="working-list">
+          <h2>Complete</h2>
+          {todos.filter(todo => todo.isDone === true).map((todo) => (
+            <><Todo todos={todos} todo={todo} key={todo.id} setIsDone={setIsDone} setTodos={setTodos}></Todo>
+            </>
+          ))}
+        </div>
       </div>
     </div>
   );
